@@ -1,0 +1,45 @@
+name: CICD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+
+jobs:
+  Testing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '22'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Tests
+        run: npm run check
+
+
+  Deploy:
+    runs-on: self-hosted
+    needs: Testing
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install Dependencies
+        run: npm install
+
+
+      - name: ahsdfj
+        run: |
+          
+      - name: Deploy to Server
+        run: |
+          pm2 delete "Server" || true
+          pm2 start "npm start" --name="Server"
