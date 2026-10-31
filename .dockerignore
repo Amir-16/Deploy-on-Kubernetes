@@ -8,7 +8,7 @@ Dockerfile
 Jenkinsfile
 *.md
 test
-k8s
 dist
 .env*
 *.pem
+k8s
