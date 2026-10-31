@@ -1,8 +1,14 @@
 node_modules
+*.log
 .git
 .github
-*.log
-Dockerfile
+.gitignore
 .dockerignore
+Dockerfile
+Jenkinsfile
+*.md
+test
 k8s
-guideline.md
+dist
+.env*
+*.pem
